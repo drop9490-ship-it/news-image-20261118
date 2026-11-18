@@ -1,22 +1,19 @@
-#!/usr/bin/env python3
-"""Entry program for make.fun news-image-20261118.
+"""Entrypoint: copy entry.png into the grading output directory."""
 
-Copies the rendered front page (entry.png, shipped in this repository) to
-the output directory. Standard library only, no network, no fonts, no
-timestamps: both runs write the same bytes.
-"""
+from os import environ
+from pathlib import Path
+from shutil import copyfile
 
-import os
-import shutil
+FILENAME = "entry.png"
+DEFAULT_OUT = "/output"
 
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    here = os.path.dirname(os.path.abspath(__file__))
-    shutil.copyfile(os.path.join(here, "entry.png"),
-                    os.path.join(out_dir, "entry.png"))
+def run() -> None:
+    destination = Path(environ.get("MAKEFUN_OUTPUT_DIR", DEFAULT_OUT))
+    destination.mkdir(parents=True, exist_ok=True)
+    source = Path(__file__).resolve().parent / FILENAME
+    copyfile(source, destination / FILENAME)
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    run()
