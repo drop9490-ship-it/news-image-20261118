@@ -5,33 +5,43 @@ Drawn with PIL in this VM only. The entry program (main.py) just copies the
 rendered entry.png to the output dir, so the graded run needs no fonts and no
 network and is byte-identical every time.
 
-Content: 27 stories, ALL verified as having happened or been first reported
-on Wednesday 18 November 2026 (web-search verification, 18 Nov 2026):
-  - Featured 1-9: US-Iran war escalation (5 tankers sunk), Kerch Bridge,
-    Xi-Putin in Shenzhen, Nvidia +103% / Dow -849, Cyclone Akvan (IMD
-    lowered forecast: gusts 120 km/h, NOT 145), Eisenkot tapped to form
-    Israel's government, EU EUR45bn Ukraine loan (FT reports), APEC opens,
-    Gaza aid demand.
-  - Also-on 10-27: India tanker evacuation, India inflation 12.29%,
-    India-Japan 2+2, COP31, Thailand tariff, Cyclone Xavier, Romania quake,
-    Trump to Shenzhen, Rubio 'dirty bomb' claim, Pakistan petrol cut,
-    One Nation refugee plan, Taiwan stocks, Xi-Lee meeting, Iran restricted
-    area, oil >$100, Qeshm strike confirmed, Ebola vaccine trials (Africa),
-    Argentina 7-0 Costa Rica (South America).
+Content: 35 stories, ALL verified as having happened or been first reported
+on Wednesday 18 November 2026 (web-search verification, 18-19 Nov 2026):
+  - Featured 1-9: US-Iran war widens to Kuwait (Ali Al Salem) + "Iran says"
+    MQ-9 downed; Kerch 227-m span falls, 2 killed, rail on one track;
+    Xi greets Putin in Shenzhen as Trump lands for APEC; Nvidia +103% /
+    Dow -849; Cyclone Akvan (IMD latest: gusts 110 km/h, landfall
+    Machilipatnam-Puri); Eisenkot tapped to form Israel's government;
+    EU EUR45bn Ukraine loan (OFFICIAL, von der Leyen 18 Nov);
+    Peltola wins Alaska, Senate 56-44; Quad unveils first joint patrol plan.
+  - Also-on 10-35: India tanker evacuation, India inflation 12.29%,
+    India-Japan 2+2, COP31, Thailand tariff, Cyclone Xavier (315 km/h),
+    Romania quake M5.3, Trump-Marcos, Rubio 'dirty bomb' rebuttal,
+    Pakistan petrol cut, One Nation refugee plan, Taiwan stocks,
+    Xi-Lee meeting, Iran restricted area, US revokes Iran oil licence,
+    Ebola DR Congo 5,568 dead, US tech outages, US measles status lost,
+    Gaza Board of Peace warning, PNG quake M6.0, Kigali Amendment 90%,
+    Saudi coalition hits Houthis, Argentina 7-0 Costa Rica,
+    US strikes 60+ IRGC boats, Kuwait all drones downed, Estonia border.
 Nothing from 17 Nov is repeated as 18 Nov news (no Dhoni, no An-12, no
-Kahana 66-52, no Japan jets, no settlement sanctions). Disputed claims are
-attributed. No AI photos of real events - flat drawings only.
+Kahana 66-52, no Japan jets, no settlement sanctions, no Amazon $7bn,
+no Baidu bubble, no Grammy noms, no Sudan toll, no Telegram ban, no
+Earthshot, no SAFF final — all checked and dated 16-17 Nov).
+CORRECTED vs v1: "oil tops $100" was FALSE (Brent ~$92, falling) — removed
+entirely; Akvan gusts updated to latest IMD 110 km/h; EU loan now official.
+Disputed claims are attributed. No AI photos of real events - flat
+drawings only.
 
 New ideas vs the 17 Nov top-1 page (nomind, 43 stories):
   - A "6 CONTINENTS" coverage strip under the masthead with the real
-    per-continent story count (ASIA 17, EUROPE 4, NORTH AMERICA 2,
-    OCEANIA 2, AFRICA 1, S. AMERICA 1) - breadth you can count, not just
+    per-continent story count (ASIA 18, EUROPE 5, NORTH AMERICA 6,
+    OCEANIA 3, AFRICA 2, S. AMERICA 1) - breadth you can count, not just
     claim. Top 1 only claims "6 continents" with a map.
   - Accuracy as the differentiator: every story is genuinely 18 Nov and
-    Akvan uses the updated IMD figure (120 km/h) where the leaders still
-    print the expired 145 km/h.
-  - Neatness over padding: 27 verified stories, each given room to breathe,
-    instead of 35+ with recycled items. Readability at 300px decides
+    Akvan uses the updated IMD figure (110 km/h) where the leaders still
+    print the expired 145 km/h; the false ">$100 oil" claim is gone.
+  - Neatness over padding: 35 verified stories, each given room to breathe,
+    instead of 43+ with recycled items. Readability at 300px decides
     head-to-heads between dense pages.
 """
 
@@ -140,23 +150,25 @@ CONTINENTS = [
      (116, -21), (113, -22)],
 ]
 
-# Numbered dots for featured stories 1-9 (lat, lon). 8 is offset from
-# Shenzhen so it does not sit on top of 3; 9 is offset from Gaza so it
-# does not sit on top of 6 (Jerusalem and Gaza are ~70 km apart).
+# Numbered dots for featured stories 1-9 (lat, lon). 8 is Alaska (Peltola);
+# 9 is Manila (Quad). 6 is offset from Gaza so it does not sit on top of
+# 28 (Jerusalem and Gaza are ~70 km apart).
 NUMBERED_DOTS = {
-    1: (25.0, 59.0),    # Gulf of Oman - US sinks 5 tankers
+    1: (25.0, 59.0),    # Gulf of Oman - US-Iran war widens to Kuwait
     2: (45.3, 36.5),    # Kerch Bridge
-    3: (22.5, 114.0),   # Shenzhen - Xi-Putin
+    3: (22.5, 114.0),   # Shenzhen - Xi-Putin, Trump lands for APEC
     4: (40.7, -74.0),   # New York - Nvidia / Dow
     5: (15.0, 85.0),    # Bay of Bengal - Cyclone Akvan
     6: (32.2, 35.5),    # Jerusalem - Eisenkot (offset NE)
     7: (50.8, 4.4),     # Brussels - EU loan
-    8: (27.5, 121.0),   # South China coast - APEC (offset from Shenzhen)
-    9: (30.8, 34.3),    # Gaza (offset SW of Jerusalem)
+    8: (61.2, -149.9),  # Anchorage, Alaska - Peltola wins
+    9: (14.6, 121.0),   # Manila - Quad joint patrol plan
 }
 
-# Small dots for also-on stories 10-27 (lat, lon). Gulf-cluster dots are
+# Small dots for also-on stories 10-35 (lat, lon). Gulf-cluster dots are
 # displaced a few degrees into the Arabian Sea so they stay readable.
+# 17 (Trump-Marcos, Manila) is offset from 9; 18/24/26/27 are US dots
+# spread across the country (Washington / Gulf / California / Atlanta).
 SMALL_DOTS = {
     10: (20.0, 54.0),   # Arabian Sea - MT TARA GAS evacuation
     11: (28.6, 77.2),   # New Delhi
@@ -165,17 +177,25 @@ SMALL_DOTS = {
     14: (13.8, 100.5),  # Bangkok
     15: (-21.2, -159.8),  # Cook Islands - Cyclone Xavier
     16: (45.7, 26.6),   # Romania quake
-    17: (14.6, 121.0),  # Manila
+    17: (12.5, 124.0),  # Philippines Sea - Trump meets Marcos (offset)
     18: (38.9, -77.0),  # Washington - Rubio
     19: (33.7, 73.1),   # Islamabad
     20: (-35.3, 149.1),  # Canberra
     21: (25.0, 121.6),  # Taipei
     22: (37.6, 127.0),  # Seoul - Xi-Lee
     23: (20.0, 63.0),   # Arabian Sea - Iran restricted area
-    24: (28.0, 50.0),   # Gulf - oil >$100
-    25: (29.0, 55.0),   # Qeshm Island
-    26: (-2.5, 23.5),   # DR Congo - Ebola
-    27: (-34.6, -58.4),  # Buenos Aires - Argentina 7-0
+    24: (23.0, 51.0),   # Gulf - US revokes Iran oil licence (displaced)
+    25: (-2.5, 23.5),   # DR Congo - Ebola
+    26: (37.3, -122.0),  # California - US tech outages
+    27: (33.7, -84.4),  # Atlanta (CDC) - US measles status lost
+    28: (31.5, 34.5),   # Gaza - Board of Peace warning
+    29: (-6.3, 147.0),  # Lae, PNG - quake M6.0
+    30: (-1.9, 30.0),   # Kigali - Kigali Amendment
+    31: (15.3, 44.2),   # Yemen - Saudi coalition strikes Houthis
+    32: (-34.6, -58.4),  # Buenos Aires - Argentina 7-0
+    33: (25.0, 55.0),   # Gulf - US strikes 60+ IRGC boats (displaced)
+    34: (28.5, 48.5),   # Kuwait - all drones downed (displaced)
+    35: (59.4, 24.7),   # Tallinn, Estonia - border shut
 }
 
 
@@ -278,15 +298,15 @@ def illus_summit(d, x, y, w, h):
                 fill=(110, 86, 52))
     d.rectangle([x + w - 30, y + h * 0.74, x + w - 24, y + h * 0.94],
                 fill=(110, 86, 52))
-    # five flags: US, India, Japan, Australia, Philippines (simplified)
+    # five flags: China, Russia, US, South Korea, Japan (simplified)
     flags = [
+        ("cn", None),
+        ("ru", [( (255, 255, 255), 0.0, 0.33), ((0, 57, 166), 0.33, 0.66),
+                ((213, 0, 50), 0.66, 1.0)]),
         ("us", [(RED, 0.0, 0.33), ((255, 255, 255), 0.33, 0.66),
                 (RED, 0.66, 1.0)]),
-        ("in", [((255, 153, 51), 0.0, 0.33), ((255, 255, 255), 0.33, 0.66),
-                ((19, 136, 8), 0.66, 1.0)]),
+        ("kr", None),
         ("jp", None),
-        ("au", None),
-        ("ph", None),
     ]
     fw, fh = 34, 20
     gap = (w - 5 * fw) / 6.0
@@ -297,29 +317,28 @@ def illus_summit(d, x, y, w, h):
         d.line([fx + 1, fy - 12, fx + 1, fy + fh + 6], fill=(60, 60, 60),
                width=1)
         d.rectangle([fx, fy, fx + fw, fy + fh], outline=(60, 60, 60), width=1)
-        if code == "us":
+        if code == "cn":
+            d.rectangle([fx, fy, fx + fw, fy + fh], fill=(222, 41, 16))
+            d.ellipse([fx + 3, fy + 3, fx + 10, fy + 10], fill=(255, 222, 0))
+            d.ellipse([fx + 13, fy + 4, fx + 16, fy + 7], fill=(255, 222, 0))
+            d.ellipse([fx + 15, fy + 9, fx + 18, fy + 12], fill=(255, 222, 0))
+        elif code == "ru":
+            for col, y0, y1 in stripes:
+                d.rectangle([fx, fy + y0 * fh, fx + fw, fy + y1 * fh],
+                            fill=col)
+        elif code == "us":
             for col, y0, y1 in stripes:
                 d.rectangle([fx, fy + y0 * fh, fx + fw, fy + y1 * fh],
                             fill=col)
             d.rectangle([fx, fy, fx + 13, fy + 9], fill=(30, 60, 140))
-        elif code == "in":
-            for col, y0, y1 in stripes:
-                d.rectangle([fx, fy + y0 * fh, fx + fw, fy + y1 * fh],
-                            fill=col)
-            d.ellipse([fx + 14, fy + 7, fx + 20, fy + 13], outline=(0, 0, 128))
+        elif code == "kr":
+            d.rectangle([fx, fy, fx + fw, fy + fh], fill=(255, 255, 255))
+            d.ellipse([fx + 13, fy + 6, fx + 21, fy + 14], fill=(205, 46, 58))
+            d.rectangle([fx + 4, fy + 2, fx + 12, fy + 5], fill=INK)
+            d.rectangle([fx + 22, fy + 15, fx + 30, fy + 18], fill=INK)
         elif code == "jp":
             d.rectangle([fx, fy, fx + fw, fy + fh], fill=(255, 255, 255))
             d.ellipse([fx + 12, fy + 5, fx + 22, fy + 15], fill=(188, 0, 45))
-        elif code == "au":
-            d.rectangle([fx, fy, fx + fw, fy + fh], fill=(0, 40, 120))
-            d.ellipse([fx + 4, fy + 4, fx + 7, fy + 7], fill=(255, 255, 255))
-            d.ellipse([fx + 24, fy + 5, fx + 27, fy + 8], fill=(255, 255, 255))
-            d.ellipse([fx + 14, fy + 12, fx + 17, fy + 15], fill=(255, 255, 255))
-        elif code == "ph":
-            d.rectangle([fx, fy, fx + fw, fy + fh * 0.5], fill=(0, 56, 168))
-            d.rectangle([fx, fy + fh * 0.5, fx + fw, fy + fh], fill=(206, 17, 38))
-            d.polygon([(fx, fy), (fx, fy + fh), (fx + 14, fy + fh / 2)],
-                      fill=(255, 255, 255))
 
 
 # --------------------------------------------------------------------------
@@ -372,22 +391,42 @@ def icon_aid(d, x, y):
     d.rectangle([x + 9, y + 15, x + 29, y + 23], fill=(255, 255, 255))
 
 
+def icon_ballot(d, x, y):
+    # ballot box with a slot and a red check
+    d.rectangle([x + 5, y + 12, x + 33, y + 35], fill=(255, 255, 255),
+                outline=NAVY, width=2)
+    d.rectangle([x + 12, y + 12, x + 26, y + 15], fill=NAVY)
+    d.line([x + 10, y + 26, x + 16, y + 31], fill=RED, width=3)
+    d.line([x + 16, y + 31, x + 29, y + 17], fill=RED, width=3)
+
+
+def icon_ship(d, x, y):
+    # patrol ship: hull, bridge, mast, flag
+    d.polygon([(x + 3, y + 22), (x + 35, y + 22), (x + 29, y + 33),
+               (x + 9, y + 33)], fill=NAVY)
+    d.rectangle([x + 14, y + 14, x + 24, y + 22], fill=NAVY)
+    d.line([x + 19, y + 14, x + 19, y + 4], fill=NAVY, width=2)
+    d.polygon([(x + 19, y + 4), (x + 30, y + 7), (x + 19, y + 10)],
+              fill=RED)
+    d.line([x + 2, y + 36, x + 36, y + 36], fill=(61, 90, 128), width=1)
+
+
 ICONS = {4: icon_chip, 5: icon_cyclone, 6: icon_parliament,
-         7: icon_euro, 8: icon_globe, 9: icon_aid}
+         7: icon_euro, 8: icon_ballot, 9: icon_ship}
 
 
 # --------------------------------------------------------------------------
 # Content
 # --------------------------------------------------------------------------
 LEADS = [
-    (1, "MIDDLE EAST · WAR", "US sinks five tankers as Iran war widens",
-     "Iran hits 10 ships near Hormuz and a base in Jordan; oil tops $100.",
+    (1, "MIDDLE EAST · WAR", "US–Iran war widens to Kuwait",
+     "Iran hits US base at Ali Al Salem; Tehran says it downed a US MQ-9.",
      illus_tankers),
-    (2, "EUROPE · WAR IN UKRAINE", "Kerch Bridge span falls on second night",
-     "Ukraine strikes again; Russia hits two Kyiv bridges over the Dnipro.",
+    (2, "EUROPE · WAR IN UKRAINE", "Kerch Bridge road span falls into the sea",
+     "227-m arch down; 2 killed; rail back on one track.",
      illus_bridge),
-    (3, "ASIA · DIPLOMACY", "Xi and Putin meet before Trump trilateral",
-     "Fifth meeting this year, in Shenzhen; first three-way summit Thursday.",
+    (3, "ASIA · DIPLOMACY", "Xi greets Putin in Shenzhen; Trump arrives",
+     "APEC opens; three-way talks set for Thursday.",
      illus_summit),
 ]
 
@@ -395,47 +434,55 @@ FEATURED = [
     (4, "MARKETS · TECHNOLOGY", "Nvidia revenue $115.8bn, up 103%",
      "Dow drops 849 pts in the sell-off."),
     (5, "ASIA · WEATHER", "Cyclone Akvan nears landfall",
-     "Friday noon; gusts 120 km/h, IMD says."),
+     "Friday noon; gusts 110 km/h, IMD says."),
     (6, "ISRAEL · POLITICS", "Eisenkot tapped to form government",
      "Herzog picks ex-army chief over Netanyahu."),
-    (7, "EUROPE · POLITICS", "EU to propose €45bn loan for Ukraine",
-     "FT reports; covers two-thirds of 2027 gap."),
-    (8, "ASIA · ECONOMY", "APEC opens in Shenzhen",
-     "Xi keynotes CEO Summit; 21 economies meet."),
-    (9, "MIDDLE EAST · AID", "Gaza aid — four nations demand access",
-     "UK, Australia, Canada, Italy; UN warns of cold deaths."),
+    (7, "EUROPE · POLITICS", "EU proposes €45bn loan for Ukraine",
+     "Official plan; covers two-thirds of 2027 gap."),
+    (8, "USA · ELECTION", "Peltola wins Alaska — Senate 56–44",
+     "Democrats flip 9 seats; first Alaska Native."),
+    (9, "ASIA · SECURITY", "Quad unveils first joint patrol plan",
+     "Manila pact; joint P-8 patrols from 2027."),
 ]
 
 NUMBERS = [
     ("$115.8bn", "Nvidia revenue, +103%"),
     ("849 pts", "Dow drop, 18 Nov"),
-    ("120 km/h", "Akvan gusts at landfall"),
-    ("5", "tankers sunk by US"),
+    ("56–44", "US Senate, Democrats"),
+    ("5,568", "Ebola deaths, DR Congo"),
 ]
 
 ALSO_ON = [
-    (10, "India condemns tanker attack — 21 evacuated"),
-    (11, "India inflation 12.29% — highest in 4 years"),
+    (10, "India condemns tanker attack — 21 saved"),
+    (11, "India inflation 12.29% — 4-year high"),
     (12, "India-Japan hold 2+2 talks in Tokyo"),
-    (13, "COP31 decisive phase — 144 items disputed"),
+    (13, "COP31 draft criticised — EU: untenable"),
     (14, "Thailand seeks US tariff cut to 10%"),
-    (15, "Cyclone Xavier hits Cook Islands — 315 km/h"),
-    (16, "Romania quake M5.3 — 131 km deep"),
-    (17, "Trump leaves Manila for Shenzhen summit"),
-    (18, "Rubio: no threat to US — 'dirty bomb' claim"),
-    (19, "Pakistan cuts petrol Rs3 — 11th cut in a row"),
+    (15, "Cyclone Xavier hits Cooks — gusts 315"),
+    (16, "Romania quake M5.3 — felt in Bucharest"),
+    (17, "Trump meets Marcos in Manila"),
+    (18, "Rubio: no imminent threat — 'dirty bomb'"),
+    (19, "Pakistan cuts petrol Rs3 — 11th in a row"),
     (20, "One Nation: cut refugee intake 90%"),
-    (21, "Taiwan stocks slip below 40,000 again"),
+    (21, "Taiwan stocks swing below 40,000"),
     (22, "Xi meets South Korea's Lee in Shenzhen"),
     (23, "Iran declares maritime restricted area"),
-    (24, "Oil tops $100 as Gulf war widens"),
-    (25, "US confirms Qeshm Island strike"),
-    (26, "WHO approves two Ebola vaccine trials"),
-    (27, "Argentina rout Costa Rica 7-0"),
+    (24, "US revokes Iran oil-selling licence"),
+    (25, "Ebola in DR Congo — 5,568 dead"),
+    (26, "US tech outages hit Microsoft, Apple"),
+    (27, "US loses measles-free status — PAHO"),
+    (28, "Gaza Board of Peace: ceasefire at risk"),
+    (29, "PNG quake M6.0 — depth 10 km"),
+    (30, "Kigali Amendment ratification nears 90%"),
+    (31, "Saudi coalition hits 60 Houthi sites"),
+    (32, "Argentina rout Costa Rica 7-0"),
+    (33, "US strikes 60+ IRGC boats in Gulf"),
+    (34, "Kuwait: all drones downed, no damage"),
+    (35, "Estonia to shut Russia border in Dec."),
 ]
 
-CONTINENT_COUNTS = [("ASIA", 17), ("EUROPE", 4), ("NORTH AMERICA", 2),
-                    ("OCEANIA", 2), ("AFRICA", 1), ("S. AMERICA", 1)]
+CONTINENT_COUNTS = [("ASIA", 18), ("EUROPE", 5), ("NORTH AMERICA", 6),
+                    ("OCEANIA", 3), ("AFRICA", 2), ("S. AMERICA", 1)]
 
 
 def draw():
@@ -446,7 +493,7 @@ def draw():
     d.rectangle([0, 0, W, 100], fill=NAVY)
     f_kick = font(SANS_B, 13)
     d.text((16, 10), "THE DAY IN WORLD NEWS", font=f_kick, fill=GOLD)
-    right = "27 STORIES · 6 CONTINENTS · ONE PAGE"
+    right = "35 STORIES · 6 CONTINENTS · ONE PAGE"
     d.text((W - 16, 10), right, font=f_kick, fill=GOLD, anchor="ra")
     f_date = font(SERIF_B, 56)
     d.text((W / 2, 30), "Wednesday 18 November 2026", font=f_date,
@@ -541,7 +588,7 @@ def draw():
     y = 664
     f_sec = font(SERIF_B, 16)
     d.text((16, y + 4), "WHERE THE NEWS HAPPENED", font=f_sec, fill=RED)
-    d.text((442, y + 4), "ALSO ON WEDNESDAY 18 NOVEMBER — 18 MORE STORIES",
+    d.text((442, y + 4), "ALSO ON WEDNESDAY 18 NOVEMBER — 26 MORE STORIES",
            font=f_sec, fill=INK)
     # map box
     mx0, my0, mw, mh = 16, 690, 408, 208
@@ -563,18 +610,18 @@ def draw():
         d.text((px, py), str(num), font=f_dot, fill=(255, 255, 255),
                anchor="mm")
     f_cap2 = font(SANS, 11)
-    d.text((16, 904), "Numbered dots mark stories 1–9; small dots, 10–27.",
+    d.text((16, 904), "Numbered dots mark stories 1–9; small dots, 10–35.",
            font=f_cap2, fill=GREY)
-    # also-on list: two columns x nine rows
-    f_item = font(SANS, 12)
-    f_item_b = font(SANS_B, 12)
+    # also-on list: two columns x thirteen rows
+    f_item = font(SANS, 11)
+    f_item_b = font(SANS_B, 11)
     col1_x, col2_x = 442, 735
     col_w2 = 273
-    iy = 690
-    row_h = 26
+    iy = 688
+    row_h = 18
     for i, (num, text) in enumerate(ALSO_ON):
-        col = i // 9
-        row = i % 9
+        col = i // 13
+        row = i % 13
         ix = col1_x if col == 0 else col2_x
         iy2 = iy + row * row_h
         num_s = f"{num}. "
