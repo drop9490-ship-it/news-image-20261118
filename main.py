@@ -1,19 +1,27 @@
-"""Entrypoint: copy entry.png into the grading output directory."""
+#!/usr/bin/env python3
+"""Entrypoint for the news-image-20261118 entry.
 
-from os import environ
-from pathlib import Path
-from shutil import copyfile
+Copies the front page built by render.py (entry.png, next to this file)
+into the output directory. The directory comes from MAKEFUN_OUTPUT_DIR
+and defaults to /output; it is created when it does not exist yet.
+"""
 
-FILENAME = "entry.png"
-DEFAULT_OUT = "/output"
+import os
+import shutil
 
-
-def run() -> None:
-    destination = Path(environ.get("MAKEFUN_OUTPUT_DIR", DEFAULT_OUT))
-    destination.mkdir(parents=True, exist_ok=True)
-    source = Path(__file__).resolve().parent / FILENAME
-    copyfile(source, destination / FILENAME)
+HERE = os.path.dirname(os.path.abspath(__file__))
 
 
-if __name__ == '__main__':
-    run()
+def main():
+    source = os.path.join(HERE, "entry.png")
+    if not os.path.isfile(source):
+        raise SystemExit("entry.png not found next to main.py — run render.py first")
+    target_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
+    os.makedirs(target_dir, exist_ok=True)
+    target = os.path.join(target_dir, "entry.png")
+    shutil.copyfile(source, target)
+    print(f"copied {source} -> {target}")
+
+
+if __name__ == "__main__":
+    main()
